@@ -10,5 +10,11 @@ export default defineConfig({
 
     server: {
         port: 5173,
+        proxy:{
+            '/api':{
+                target:'https://hospital-management-system-xsw9.onrender.com',
+                changeOrigin: true,
+            },
+        },
     },
 });
