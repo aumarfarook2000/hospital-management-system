@@ -27,10 +27,18 @@ const app = express();
 
 connectDB();
 
+const allowedOrigins = [
+    "http://localhost:5173",
+    "https://hospital-management-system-7syw4mett-maryam-f361.vercel.app",
+    process.env.CLIENT_URL?.replace(/\/+$/, ""),
+].filter(Boolean);
+
 app.use(
     cors({
-        origin: process.env.CLIENT_URL || "http://localhost:5173",
+        origin: allowedOrigins,
         credentials: true,
+        methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+        allowedHeaders: ["Content-Type", "Authorization"],
     })
 );
 
