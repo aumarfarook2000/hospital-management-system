@@ -29,7 +29,7 @@ connectDB();
 
 const allowedOrigins = [
     "http://localhost:5173",
-    "https://hospital-management-system-7syw4mett-maryam-f361.vercel.app",
+    "https://hospital-management-system-hrcj5ab6l-maryam-f361.vercel.app",
     process.env.CLIENT_URL?.replace(/\/+$/, ""),
 ].filter(Boolean);
 
