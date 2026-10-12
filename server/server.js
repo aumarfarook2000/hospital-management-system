@@ -29,7 +29,7 @@ connectDB();
 
 const allowedOrigins = [
     "http://localhost:5173",
-    "https://hospital-management-system-hrcj5ab6l-maryam-f361.vercel.app",
+    "https://hms-frontend-flame.vercel.app/api/v1/auth",
     process.env.CLIENT_URL?.replace(/\/+$/, ""),
 ].filter(Boolean);
 
@@ -41,6 +41,7 @@ app.use(
         allowedHeaders: ["Content-Type", "Authorization"],
     })
 );
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
