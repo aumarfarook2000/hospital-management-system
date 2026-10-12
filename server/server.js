@@ -29,7 +29,7 @@ connectDB();
 
 const allowedOrigins = [
     "http://localhost:5173",
-    "https://hms-frontend-flame.vercel.app/api/v1/auth",
+    "https://hms-frontend-flame.vercel.app/",
     process.env.CLIENT_URL?.replace(/\/+$/, ""),
 ].filter(Boolean);
 
