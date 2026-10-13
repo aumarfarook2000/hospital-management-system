@@ -69,6 +69,13 @@ app.get("/api/v1/auth-test", (req, res) => {
     });
 });
 
+app.get("/api/v1/auth/login-test", (req, res) => {
+    res.json({
+        success: true,
+        message: "Auth router prefix test passed",
+    });
+});
+
 app.use(
     "/api/v1/auth",
     authRoutes
