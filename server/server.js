@@ -62,6 +62,13 @@ app.get("/api/v1/health", (req, res) => {
     });
 });
 
+app.get("/api/v1/auth-test", (req, res) => {
+    res.json({
+        success: true,
+        message: "Auth route registration test passed",
+    });
+});
+
 app.use(
     "/api/v1/auth",
     authRoutes
