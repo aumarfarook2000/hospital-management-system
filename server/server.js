@@ -28,18 +28,18 @@ const app = express();
 connectDB();
 
 const allowedOrigins = [
-    "http://localhost:5173",
-    "https://hms-frontend-flame.vercel.app/",
-    process.env.CLIENT_URL?.replace(/\/+$/, ""),
+  "http://localhost:5173",
+  "https://hms-frontend-qzxsxgz0z-maryam-f361.vercel.app",
+  "https://hms-frontend-flame.vercel.app",
+  process.env.CLIENT_URL,
 ].filter(Boolean);
 
 app.use(
-    cors({
-        origin: allowedOrigins,
-        credentials: true,
-        methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-        allowedHeaders: ["Content-Type", "Authorization"],
-    })
+  cors({
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
 );
 
 

@@ -2,26 +2,26 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: import.meta.env.VITE_API_URL
-        ? `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/api/v1/auth/admin`
-        : "http://localhost:5000/api/v1",
+  baseURL: import.meta.env.VITE_API_URL
+    ? `${import.meta.env.VITE_API_URL}/api/v1`
+    : "http://localhost:5000/api/v1",
 
-    headers: {
-        "Content-Type": "application/json",
-    },
+  headers: {
+    "Content-Type": "application/json",
+  },
 });
 
 api.interceptors.request.use(
-    (config) => {
-        const token = localStorage.getItem("hms_token");
+  (config) => {
+    const token = localStorage.getItem("hms_token");
 
-        if (token) {
-            config.headers.Authorization = `Bearer ${token}`;
-        }
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
 
-        return config;
-    },
-    (error) => Promise.reject(error)
+    return config;
+  },
+  (error) => Promise.reject(error)
 );
 
 export default api;
