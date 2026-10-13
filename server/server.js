@@ -31,6 +31,7 @@ const allowedOrigins = [
   "http://localhost:5173",
   "https://hms-frontend-qzxsxgz0z-maryam-f361.vercel.app",
   "https://hms-frontend-flame.vercel.app",
+  "https://hms-frontend-d1n6z8m73-maryam-f361.vercel.app",
   process.env.CLIENT_URL,
 ].filter(Boolean);
 
