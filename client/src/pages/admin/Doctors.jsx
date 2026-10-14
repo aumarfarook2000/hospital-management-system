@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import api from "../../api";
 
 
-const api = axios.create({
+
+const API_URL = axios.create({
   baseURL: import.meta.env.VITE_API_URL
     ? `${import.meta.env.VITE_API_URL}`
     : "http://localhost:5000/api/v1",
