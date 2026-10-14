@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 import api from "../../api";
 
-const API_URL = "http://localhost:5000/api/v1";
+
+const api = axios.create({
+  baseURL: import.meta.env.VITE_API_URL
+    ? `${import.meta.env.VITE_API_URL}`
+    : "http://localhost:5000/api/v1",
+
+
 
 function Doctors() {
     const [doctors, setDoctors] = useState([]);
